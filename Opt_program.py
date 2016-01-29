@@ -17,6 +17,8 @@ cm = 1e-2 #centimeter unit in meters
 # Instantiate CONSTANTS AND STANDARD PARAMATERS FOR CALCULATIONS
 rho_au = 2.44e-8 #Resistivity of gold in [ohm-m] @ 20 C
 q = 1.602e-19 # Coulomg unit of charge
-N_n =
+N_n = 2e17 / cm^3 #doping of n type base layer
+N_p = 5e18 / cm^3 #doping of p type emitter
+
 
 
