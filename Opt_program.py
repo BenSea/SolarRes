@@ -4,6 +4,7 @@ eventually, it will be more complex than the originial program, and have a GUI.
 The goal being to eventually have a way to draw a layout for fingers on a solar cell, and 
 immediatly calculate the resistance.
 """
+from scipy import floor
 
 #Variable Unit Conversions
 Ang = 1e-10 # Angstrom unit in meters
@@ -17,18 +18,19 @@ cm = 1e-2 #centimeter unit in meters
 # Instantiate CONSTANTS AND STANDARD PARAMATERS FOR CALCULATIONS
 rho_au = 2.44e-8 #Resistivity of gold in [ohm-m] @ 20 C
 q = 1.602e-19 # Coulomg unit of charge
-N_n = 2e17 * cm**3 #doping of n type base layer
-N_p = 5e18 * cm**3 #doping of p type emitter
-
+N_n = 2e17 / cm^3 #doping of n type base layer
+N_p = 5e18 / cm^3 #doping of p type emitter
+mu_n = (2.8*math.exp(3)) # mobility of electron
+mu_p = (4*math.exp(2))
 
 # Initialize cell thickness detail all should be prompt's laters
 
 #Emitter layer thickness 
 thick_emit = 500*nm 
-"""type_emit = input('N or P type')"""
+#type_emit = input('N or P type') Later add
 #Base layer thickness 
 thick_base = 500*um
-"""type_emit = input("N or P type')"""
+#type_emit = input("N or P type') Later add
 
 #Metal thickness's
 back_metal = 2000 * Ang 
@@ -36,7 +38,7 @@ front_metal = 3000*Ang
 
 #Initializing the cell size parameters
 L_cell = input('Enter the Cell side (mm): ')*mm
-A_cell = L_cell**2
+A_cell = L_cell^2
 
 #All parameters for optimization are based on coverage area
 cvrg = input('Input Desired coverage area (%): ')/100
@@ -48,31 +50,27 @@ A_metal = A_cell*cvrg
 Margin = 25* um 
 
 #BUSBAR parameters
-
 #minimum
 W_bus_min = input('minimum busbar width (um): ')*um
 #busbar widths....think about this more on the algorithim front
-"""W_bus = W_bus_min + (10*um*(array*L_cell/mm))"""
+W_bus =[(W_bus_min + (10*um*(i*L_cell/mm))) for i in range(9)]
 #Length of busbar
 L_bus = L_cell - (2*Margin)
 #Area of the busbar in m^2
 A_bus = L_bus * W_bus 
-
 #end of BUSBAR Parameters
 
 #FINGER parameters.... These should mostly be prompts
-
 #Minimum finger width
 W_fin_min = 10*um
-#range of finger widths
-"""W_fin = W_fin_min + 2*um*array"""
+#range of finger widths in an array form, should probably be 1 um intervals 
+W_fin =[(W_fin_min + 5*um*i) for i  in range(9)]
 #Finger length max
 L_fin = (L_bus - W_bus)/2
 #Potential Finger Area
 A_fin = A_metal - A_bus
 #Number of finger's calculations
-"""N_fin = use floor function to find out arrays number of finger"""
-
+N_fin = [math.floor(A_fin/(2*W_fin[i]*L_fin)) for i in range(9)]
 #End of Finger parameters
 
 #Characteristics of the cell. Some of these (FF) will have to be prompts 
@@ -85,5 +83,5 @@ A_fin = A_metal - A_bus
 #End of Characteristics of the cell
 
 #Resistance Calculatoins
-#R_fc = 1.66 
-#R_emit = (1/
+R_fc = 1.66 
+R_emit = (1/
