@@ -1,0 +1,124 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Allo, 'Allo!</h1>
+    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Features:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
+        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<body>
+
+<h1>Vertical Cell Dimensions </h1>
+
+  <div id="opn" >
+    <label for ="Em_thick">Emitter Thickness:</label>
+    <input id="Em_thick" type="number" ng-model="Em_thick"/>
+    <select unit="unitSelect">
+      <option>Nm</option>
+      <option>Um</option> </select>
+    <span class="duhh"><strong>Value:</strong>{{Em_thick}}</span></br />
+
+    <label for ="Emit_dope">Emitter Doping (/cm^3)</label>
+    <input id="Emit_dope" type="number" ng-model="Emit_dope"/>
+    <select unit="Conc">
+      <option>10^15</option>
+      <option>10^16</option>
+      <option>10^17</option>
+      <option>10^18</option>
+      <option>10^19</option>
+      <option>10^20</option>
+      </select>
+    <span class="duhh"><strong>Value:</strong>{{Emit_dope}}</span></br />
+
+    <!--<label for ="textEdit">N or P type?</label> -->
+    <label for ="Base_Thick">Base Thickness:</label>
+    <input id="B_Thick" type="number" ng-model="B_Thick"/>
+    <select unit="unitSelect">
+      <option>Nm</option>
+      <option>Um</option> </select>
+    <span class="duhh"><strong>Value:</strong>{{B_Thick}}</span></br />
+
+    <label for ="Base_Dope">Base Doping (/cm^3):</label>
+    <input id="numberEdit" type="number" ng-model="numberValue"/>
+    <select unit="Conc">
+      <option>10^15</option>
+      <option>10^16</option>
+      <option>10^17</option>
+      <option>10^18</option>
+      <option>10^19</option>
+      <option>10^20</option>
+      </select>
+    <span class="duhh"><strong>Value:</strong>{{numberValue}}</span></br />
+
+    <label for ="FMetal_thick">Front Metal Thickness:</label>
+    <input id="numberEdit" type="number" ng-model="BMetalThick"/>
+    <select unit="unitSelect">
+      <option>Ang</option>
+      <option>Nm</option>
+      <option>Um</option>
+      </select>
+    <span class="duhh"><strong>Value:</strong>{{numberValue}}</span></br />
+
+    <label for ="BMetal_thick">Back Metal Thickness (Ang):</label>
+    <input id="BMetal_Thick" type="number" ng-model="BMetalThick"/>
+    <select unit="unitSelect">
+      <option>Ang</option>
+      <option>Nm</option>
+      <option>Um</option>
+      </select>
+    <span class="duhh"><strong>Value:</strong>{{BMetalThick}}</span></br />
+
+    <label for ="Cell_length">Cell Side length:</label>
+    <input id="Cell_length" type="number" ng-model="Cell_length"/>
+    <select unit="unitSelect">
+      <option>cm</option>
+      <option>mm</option>
+      </select>
+    <span class="duhh"><strong>Value:</strong>{{Cell_length}}</span></br />
+
+    <label for ="Coverage_Area">Coverage Area (%):</label>
+    <input id="Coverage_Area" type="number" ng-model="Coverage_Area"/>
+    <span class="duhh"><strong>Value:</strong>{{Coverage_Area}}</span></br />
+
+    <label for ="Bus_bar_Wmin">Bus_bar_Wmin :</label>
+    <input id="Bus_bar_Wmin" type="number" ng-model="Bus_bar_Wmin"/>
+    <select unit="unitSelect">
+      <option>um</option>
+      <option>mm</option>
+      </select>
+    <span class="duhh"><strong>Value:</strong>{{Bus_bar_Wmin}}</span></br />
+
+    <label for ="Finger_Wmin">Finger_Wmin :</label>
+    <input id="Finger_Wmin" type="number" ng-model="Finger_Wmin"/>
+    <select unit="unitSelect">
+      <option>um</option>
+      <option>mm</option>
+      </select>
+    <span class="duhh"><strong>Value:</strong>{{Finger_Wmin}}</span></br />
+
+
+
+  </div>
+  </body>
+  <script>
+
+
+var em_Thick = document.getElementById("Em_Thick").
+
+</script>
+
+
+
+
+

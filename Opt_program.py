@@ -17,8 +17,8 @@ cm = 1e-2 #centimeter unit in meters
 # Instantiate CONSTANTS AND STANDARD PARAMATERS FOR CALCULATIONS
 rho_au = 2.44e-8 #Resistivity of gold in [ohm-m] @ 20 C
 q = 1.602e-19 # Coulomg unit of charge
-N_n = 2e17 / cm^3 #doping of n type base layer
-N_p = 5e18 / cm^3 #doping of p type emitter
+N_n = 2e17 * cm**3 #doping of n type base layer
+N_p = 5e18 * cm**3 #doping of p type emitter
 
 
 # Initialize cell thickness detail all should be prompt's laters
@@ -36,7 +36,7 @@ front_metal = 3000*Ang
 
 #Initializing the cell size parameters
 L_cell = input('Enter the Cell side (mm): ')*mm
-A_cell = L_cell^2
+A_cell = L_cell**2
 
 #All parameters for optimization are based on coverage area
 cvrg = input('Input Desired coverage area (%): ')/100
@@ -85,5 +85,5 @@ A_fin = A_metal - A_bus
 #End of Characteristics of the cell
 
 #Resistance Calculatoins
-R_fc = 1.66 
-R_emit = (1/
+#R_fc = 1.66 
+#R_emit = (1/
